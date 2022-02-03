@@ -43,7 +43,7 @@ Very rarely, you see a <b>500 Internal Server</b> error or a connection failure.
 
 
 ### Hypothesis
-If "availability" is the percentage of requests per day that return 200 OK, the system will be 99.9% available.
+If "availability" is the percentage of requests per day that return 200 OK, the system will be 99.7% available.
 
 
 ### Measure
