@@ -17,7 +17,9 @@ const httpRequestDurationMicroseconds = new Prometheus.Histogram({
 app.use((req, res, next) => {
   res.locals.startEpoch = Date.now()
   next()
+
 })
+
 
 app.get('/', (req, res, next) => {
   setTimeout(() => {
@@ -25,6 +27,7 @@ app.get('/', (req, res, next) => {
     next()
   }, Math.round(Math.random() * 200))
 })
+
 
 app.get('/bad', (req, res, next) => {
   next(new Error('My Error'))
@@ -35,6 +38,7 @@ app.get('/metrics', (req, res) => {
   res.set('Content-Type', Prometheus.register.contentType)
   res.end(Prometheus.register.metrics())
 })
+
 
 // Error handler
 app.use((err, req, res, next) => {

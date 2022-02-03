@@ -10,16 +10,18 @@
 <!-- .slide: data-background-color="white"  --> 
 <img style="background-image: white;" src="/slides/assets/prometheus_architecture.png" />
 
-
-<!-- .slide: data-background-color="white"  --> 
-<img style="background-image: white;" src="/slides/assets/metrics.png" />
-
 Note:
 Prometheus architecture encompasses 3 main points we discussed before:
 Ingesting, storing, and querying metrics data.
 Ingestion can happen by service discovery, where Prometheus knows available services that expose metrics and scrape metrics from them, this is what we call a pull model. Ingestion can also happen by using the push model, where the service is responsible for posting data to the Prometheus store.
 Prometheus stores data in a time series "database", which can be later retrieved by querying an http server. 
 It also has an alerting component that can be used.
+
+
+<!-- .slide: data-background-color="white"  --> 
+<img style="background-image: white;" src="/slides/assets/metrics.png" />
+
+Note:
 Prometheus exposes four different kinds of metrics:
 - A counter is a metric that can only go up, so it either stays the same or is increased.
 - A gauge is a metric that can go up and down.
