@@ -16,27 +16,27 @@
 
 Note:
 Prometheus architecture encompasses 3 main points we discussed before:
-Ingesting, storing and querying metrics data.
-Ingestion can happen by service discovery, where prometheus knows available services that expose metrics and scrape metrics from them, this is what we call a pull model. Ingestion can also happen by using the push model, where the service is responsible for posting data to Prometheus store.
-Prometheus stores data in a time series "database", which can be later retrieved by querying a http server. 
+Ingesting, storing, and querying metrics data.
+Ingestion can happen by service discovery, where Prometheus knows available services that expose metrics and scrape metrics from them, this is what we call a pull model. Ingestion can also happen by using the push model, where the service is responsible for posting data to the Prometheus store.
+Prometheus stores data in a time series "database", which can be later retrieved by querying an http server. 
 It also has an alerting component that can be used.
-Prometheus exposes different kind of metrics:
-- A counter is a metric that can only goes up, so it either stays the same or is increased.
+Prometheus exposes four different kinds of metrics:
+- A counter is a metric that can only go up, so it either stays the same or is increased.
 - A gauge is a metric that can go up and down.
 - An histogram is a group of counters that are all increased when the sampled observation it's lower than a value.
-For instance, we can organize buckets that counts all requests that takes up to 1ms, 10ms, 100ms, 1s, 10s and those beyond 10s.
-- A summary is like the histogram but instead of using nominal values, it uses quantiles.
+For instance, we can organize buckets that count all requests that take up to 1ms, 10ms, 100ms, 1s, 10s, and those beyond 10s.
+- A summary is like a histogram but instead of using nominal values, it uses quantiles.
 
-And we use a query language to get insight of these different metric types.
+And we use a query language to get insights from these different metric types.
 
-To better illustrate prometheus, we will setup a very simple project where we can see it in action!
+To better illustrate Prometheus, we will set up a very simple project where we can see it in action!
 1. Quick overview of what our service is doing.
 2. Spin our service
 ```sh
 npm i && npm run start
 ```
-3. Show the two application routes "/" and "/bad", one returning 200 and other 500. Show their answer.
-4. We will expose two kind of metrics. Automatically collected metris by the "prom-client" library and custom metrics that we defined. Show the "/metrics" route and the request duration middleware.
+3. Show the two application routes "/" and "/bad", one returning 200 and the other 500. Show their answer.
+4. We will expose two kinds of metrics. Automatically collected metrics by the "prom-client" library and custom metrics that we defined. Show the "/metrics" route and the request duration middleware.
 5. Spin prometheus
 ```sh
  docker run -p 9090:9090 -v "$(pwd)/prometheus-data/prometheus.yml":/etc/prometheus/prometheus.yml prom/prometheus
@@ -68,7 +68,7 @@ wrk -t12 -c400 -d10s "http://127.0.0.1:3001/bad"
 Grafana allows you to query, visualize, alert on, and explore your metrics, logs, and traces no matter where they are stored.
 
 Note:
-We will run in docker grafana: 
+We will run in docker Grafana: 
 ```sh
 docker run -i -p 3000:3000 grafana/grafana
 ```
@@ -121,11 +121,11 @@ Type: Percent 0-1
 
 Threshold: 0.97 for success rate (green)
 
-Bullshit time rss: https://status.aws.amazon.com/rss/elasticbeanstalk-us-west-2.rss
+Bullshit time RSS: https://status.aws.amazon.com/rss/elasticbeanstalk-us-west-2.rss
 
 Save the dashboard. 
 
-Create an alert for Sucess rate that shows our SLA.
+Create an alert for the Sucess rate that shows our SLA.
 
 Create folder.
 
