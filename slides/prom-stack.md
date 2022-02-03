@@ -13,8 +13,11 @@
 Note:
 Prometheus architecture encompasses 3 main points we discussed before:
 Ingesting, storing, and querying metrics data.
+
 Ingestion can happen by service discovery, where Prometheus knows available services that expose metrics and scrape metrics from them, this is what we call a pull model. Ingestion can also happen by using the push model, where the service is responsible for posting data to the Prometheus store.
+
 Prometheus stores data in a time series "database", which can be later retrieved by querying an http server. 
+
 It also has an alerting component that can be used.
 
 
@@ -31,6 +34,10 @@ For instance, we can organize buckets that count all requests that take up to 1m
 
 And we use a query language to get insights from these different metric types.
 
+
+# Demo time!
+
+Note:
 To better illustrate Prometheus, we will set up a very simple project where we can see it in action!
 1. Quick overview of what our service is doing.
 2. Spin our service
@@ -69,6 +76,8 @@ wrk -t12 -c400 -d10s "http://127.0.0.1:3001/bad"
 ## Grafana
 Grafana allows you to query, visualize, alert on, and explore your metrics, logs, and traces no matter where they are stored.
 
+
+# Demo time !
 Note:
 We will run in docker Grafana: 
 ```sh

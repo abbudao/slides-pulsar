@@ -25,7 +25,10 @@
 
 Note:
 Easier than defining an available system, it's defining an unavailable system; an unavailable system cannot perform its function and will fail by default.
-Availability defines whether a system can fulfill its intended function at a point in time. In addition to being used as a reporting tool, the historical availability measurement can also describe the probability that your system will perform as expected in the future.
+
+Availability defines whether a system can fulfill its intended function at a point in time. 
+
+In addition to being used as a reporting tool, the historical availability measurement can also describe the probability that your system will perform as expected in the future.
 
 
 Question: How often is the system available?
@@ -61,6 +64,7 @@ After seven days, there’s a minimum of 99.7% availability on any given day.
 
 Note:
 Well, we happily report to our boss, hey, our service on its worst day had 99.7% of availability. And you receive your boss praise!
+
 On the next day, your boss comes to you furious, that users are complaining about not being able to search for their favorite book.
 
 
@@ -71,7 +75,11 @@ You've made the classic mistake of basing your definition of availability on a m
 ### It's all about the business 
 
 Note:
-We should have picked a metric that defines what our business is trying to achieve. As we sell books, querying for a book seems like a good candidate to measure on, because is on par with what feels to our users that our system is available. We can define them, that queries taking up to 5 seconds are considered within the acceptable range.
+We should have picked a metric that defines what our business is trying to achieve.
+
+As we sell books, querying for a book seems like a good candidate to measure on, because is on par with what feels to our users that our system is available.
+
+We can define them, that queries taking up to 5 seconds are considered within the acceptable range.
 
 
 ## 1.3 SLO, SLA, and SLI
@@ -81,7 +89,11 @@ We should have picked a metric that defines what our business is trying to achie
 The numerical target for system availability, defined by our business needs.
 
 Note: 
-SRE begins with the idea that a prerequisite to success is availability. We should define what is the target system availability so we can spend resources accordingly, this is a business decision as to the more available we want a system we will have diminishing returns in trying to do so and we will always have a cost of opportunity involved in doing it.
+SRE begins with the idea that a prerequisite to success is availability.
+
+We should define what is the target system availability so we can spend resources accordingly, this is a business decision.
+
+The more available we want a system to be, the more we will have diminishing returns in trying to do so. And we will always have a cost of opportunity involved in doing it.
 
 
 ### SLA
@@ -109,7 +121,9 @@ Capturing all of the information necessary to describe the state of the microser
 The key metrics are derived from our SLO definition and are constantly measured, forming our SLIs.
 
 Note:
-This usually takes place in health dashboards. Those indicate how our services are behaving. We can have insights from its past behavior easily by looking at charts and indicators.
+This usually takes place in health dashboards. Those indicate how our services are behaving. 
+
+We can have insights from its past behavior easily by looking at charts and indicators.
 
 
 ### 3. Alerting
