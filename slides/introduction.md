@@ -27,10 +27,6 @@ Note:
 Easier than defining an available system, it's defining an unavailable system; an unavailable system cannot perform its function and will fail by default.
 Availability defines whether a system can fulfill its intended function at a point in time. In addition to being used as a reporting tool, the historical availability measurement can also describe the probability that your system will perform as expected in the future.
 
-<!-- Your definition of availability needs to be the same as the user expectation of your system. Let's dive into an example of defining availability for a system:
-“design a system to be as available as is required, but not much more.” -->
-
-
 
 Question: How often is the system available?
 
@@ -58,14 +54,13 @@ Take a daily availability measurement as the percentage of 200 OK responses vs. 
 After seven days, there’s a minimum of 99.7% availability on any given day.
 
 
-
 <!-- .slide: data-background="slides/assets/shakespare.png"  --> 
 
 
 ### All good?
 
 Note:
-Well, we happily report to our boss, hey, our service on its worst day had 99.9% of availability. And you receive your boss praise!
+Well, we happily report to our boss, hey, our service on its worst day had 99.7% of availability. And you receive your boss praise!
 On the next day, your boss comes to you furious, that users are complaining about not being able to search for their favorite book.
 
 
@@ -122,10 +117,14 @@ The detection of failures, as well as the detection of changes within key metric
 
 Note:
 Importantly, alerts should also be triggered whenever a key metric is not
-seen. Thresholds for key metrics can be very difficult to set without historical data, this can be accomplished by either monitoring it closely after its release or by setting up stress tests.
+seen. 
+
+Thresholds for key metrics can be very difficult to set without historical data, this can be accomplished by either monitoring it closely after its release or by setting up stress tests.
+
 All alerts need to be actionable. Non-actionable alerts are those that are triggered and then resolved (or ignored) by the developer(s) on call for the microservice because
-they are not important, not relevant, do not signify that anything is wrong with the microservice, or alert on a problem that cannot be resolved by the developer(s). Any
-alert that cannot be immediately acted on by the on-call developer(s) should be removed from the pool of alerts, reassigned to the relevant on-call rotation, or (if possible) changed so that it becomes actionable. Clear instructions are delivered with each alert.
+they are not important, not relevant, do not signify that anything is wrong with the microservice, or alert on a problem that cannot be resolved by the developer(s).
+
+Any alert that cannot be immediately acted on by the on-call developer(s) should be removed from the pool of alerts, reassigned to the relevant on-call rotation, or (if possible) changed so that it becomes actionable. Clear instructions are delivered with each alert.
 
 
 ### 4. On-Call Rotations
